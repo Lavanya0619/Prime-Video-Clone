@@ -10,7 +10,19 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                #!/bin/bash
+                echo "project is being tested"
+
+                echo "Node.js version:"
+                node -v
+
+                echo "npm version:"
+                npm -v
+
+                echo "tests are running : "
+
+                npm run test
+                echo "Tests completed"
             }
         }
 
@@ -18,7 +30,7 @@ pipeline {
             steps {
                
                 echo "Starting React development server..."
-                sh 'npm start &'
+                sh 'npm start'
                 
                
                 echo "Waiting for server to start..."
