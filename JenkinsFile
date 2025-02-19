@@ -10,19 +10,19 @@ pipeline {
 
         stage('Test') {
             steps {
-                #!/bin/bash
-                echo "project is being tested"
+                
+                sh echo "project is being tested"
 
-                echo "Node.js version:"
-                node -v
+                sh echo "Node.js version:"
+                sh node -v
 
-                echo "npm version:"
-                npm -v
+                sh echo "npm version:"
+                sh npm -v
 
-                echo "tests are running : "
+                sh echo "tests are running : "
 
-                npm run test
-                echo "Tests completed"
+                sh npm run test
+                sh echo "Tests completed"
             }
         }
 
@@ -45,13 +45,12 @@ pipeline {
 
         stage('Deliver') {
             steps {
-                #!/bin/bash
 
-                echo "building the enviornemnt"
+                sh echo "building the enviornemnt"
 
-                echo "deploying the application"
+                sh echo "deploying the application"
 
-                echo "deployement done"
+                sh echo "deployement done"
             }
         }
     }
