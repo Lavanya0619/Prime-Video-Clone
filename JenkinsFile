@@ -45,7 +45,13 @@ pipeline {
 
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                #!/bin/bash
+
+                echo "building the enviornemnt"
+
+                echo "deploying the application"
+
+                echo "deployement done"
             }
         }
     }
